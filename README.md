@@ -29,7 +29,9 @@ Compile using SCons:
 ## Usage
 
 The program takes three arguments:
+
     ./extpage test_input.jpg output_left.jpg output_right.jpg
+
 where test_input.jpg is the input file name, and the following two are the
 output file names.
 
