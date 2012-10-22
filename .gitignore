@@ -16,3 +16,6 @@
 
 # Ignore OS X related files
 .DS_Store
+
+# Ignore executables
+extpage

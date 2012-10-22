@@ -4,7 +4,7 @@
 #include "page.h"
 #include "marker.h"
 
-BookImage::BookImage(IplImage *src_img) : src_img(cvCloneImage(src_img))
+BookImage::BookImage(const IplImage *src_img) : src_img(cvCloneImage(src_img))
 {
     // Create grayscale image.
     IplImage *gray_img = cvCreateImage(cvGetSize(src_img), IPL_DEPTH_8U, 1);
@@ -109,7 +109,7 @@ IplImage *BookImage::create_page_image(
 
 IplImage *BookImage::create_page_image(
         const std::map<int, CvPoint2D32f> &dst_markers,
-        LayoutInfo layout)
+        const LayoutInfo &layout)
 {
     // Get the destination image size in pixel.
     double page_width_px = (layout.page_right - layout.page_left) * layout.dpi;

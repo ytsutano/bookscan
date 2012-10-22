@@ -25,13 +25,13 @@ private:
     std::map<int, CvPoint2D32f> src_markers;
 
 public:
-    BookImage(IplImage *src_img);
+    BookImage(const IplImage *src_img);
     ~BookImage();
     IplImage *create_page_image(const std::map<int, CvPoint2D32f> &dst_markers,
             CvSize dst_size);
     IplImage *create_page_image(
             const std::map<int, CvPoint2D32f> &dst_markers,
-            LayoutInfo layout);
+            const LayoutInfo &layout);
 };
 
 #endif
