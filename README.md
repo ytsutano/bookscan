@@ -18,10 +18,12 @@ I have no time to verify it still works today.
 
 ## Compilation
 
-I have installed OpenCV using MacPorts:
+Install OpenCV:
+
     sudo port install opencv
 
 Compile using SCons:
+
     scons
 
 ## Usage
