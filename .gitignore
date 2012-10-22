@@ -10,3 +10,9 @@
 *.lai
 *.la
 *.a
+
+# Ignore SCons related files
+.sconsign.dblite
+
+# Ignore OS X related files
+.DS_Store
