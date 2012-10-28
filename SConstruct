@@ -1,7 +1,7 @@
 import os.path
 
 sources = ['main.cpp', 'marker.cpp', 'page.cpp']
-target = 'extpage'
+target = 'build/extpage'
 objs = []
 
 for s in sources:
