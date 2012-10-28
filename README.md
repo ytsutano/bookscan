@@ -47,7 +47,32 @@ To debug using an webcam, execute the program without an argument:
 
 One way to automate is to use Automator script like this one:
 
-![Automator Script](docs/automator.png)
+	if [ x$1 = x ]; then
+		exit;
+	fi
+	
+	FILENAME=${1##*/}
+	EXT=${FILENAME##*.}
+	BASE=${FILENAME%.*}
+	SRC_PATH=${1%/*}
+	RESULT_PATH=${SRC_PATH%/*}/out/
+	
+	LEFT_IMG=${RESULT_PATH}${BASE}_left.${EXT}
+	RIGHT_IMG=${RESULT_PATH}${BASE}_right.${EXT}
+	
+	say "Extracting pages..." 
+	
+	if extpage $1 $LEFT_IMG $RIGHT_IMG > /dev/null; then
+		say "Done." 
+	else
+		say "Failed."
+	fi
+	
+	echo $1
+	echo $LEFT_IMG
+	echo $RIGHT_IMG
+
+See [automator.png](docs/automator.png).
 
 Save it as an application and invoke it using Folder Actions.
 
